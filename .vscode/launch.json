@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "C#: LegalSearchApp [http]",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\LegalSearchApp\\LegalSearchApp.csproj",
+            "launchConfigurationId": "TargetFramework=;http"
+        }
+    ]
+}
