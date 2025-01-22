@@ -18,7 +18,7 @@ Additional goals here include:
 
 ## Phase 1
 - Eat up GitHub licenses and keep them in memory
-- Implement API for regular text search
+- Implement API for regular text search -- DONE
 
 ## Phase 2
 - Get it hosted on Azure in simplest possible form
