@@ -26,15 +26,36 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            // Pick summary based on TemperatureC instead of at random. AI!
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
+    var forecast = Enumerable.Range(1, 5).Select(index =>
+    {
+        var date = DateOnly.FromDateTime(DateTime.Now.AddDays(index));
+        var temperatureC = Random.Shared.Next(-20, 55);
+
+        string summary;
+        if (temperatureC <= -10)
+            summary = "Freezing";
+        else if (temperatureC <= 0)
+            summary = "Bracing";
+        else if (temperatureC <= 10)
+            summary = "Chilly";
+        else if (temperatureC <= 15)
+            summary = "Cool";
+        else if (temperatureC <= 20)
+            summary = "Mild";
+        else if (temperatureC <= 25)
+            summary = "Warm";
+        else if (temperatureC <= 30)
+            summary = "Balmy";
+        else if (temperatureC <= 35)
+            summary = "Hot";
+        else if (temperatureC <= 40)
+            summary = "Sweltering";
+        else
+            summary = "Scorching";
+
+        return new WeatherForecast(date, temperatureC, summary);
+    })
+    .ToArray();
     return forecast;
 })
 .WithName("GetWeatherForecast");
