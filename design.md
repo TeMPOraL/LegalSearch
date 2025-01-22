@@ -12,6 +12,10 @@ Additional goals here include:
 - Drop all the nonsense from default template
 - Add API endpoint stubs and associated data structures
 
+## Phase 0.5
+- Put it up on GitHub
+- Set up basic GitHub actions to build/test it if it makes sense
+
 ## Phase 1
 - Eat up GitHub licenses and keep them in memory
 - Implement API for regular text search
