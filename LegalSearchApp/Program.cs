@@ -30,7 +30,7 @@ app.MapGet("/weatherforecast", () =>
     {
         var date = DateOnly.FromDateTime(DateTime.Now.AddDays(index));
         var temperatureC = Random.Shared.Next(-20, 55);
-
+        // Simplify this code so it maps the known minValue, maxValue range to indices in the summaries array. AI!
         string summary;
         if (temperatureC <= -10)
             summary = "Freezing";
