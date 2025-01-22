@@ -12,7 +12,7 @@ Additional goals here include:
 - Drop all the nonsense from default template
 - Add API endpoint stubs and associated data structures
 
-## Phase 0.5
+## Phase 0.5 -- DONE
 - Put it up on GitHub
 - Set up basic GitHub actions to build/test it if it makes sense
 
