@@ -8,7 +8,7 @@ Additional goals here include:
 - Putting it on Azure and making use of all the magic Azure services for building RAG pipeline
 
 # Implementation plan
-## Phase 0
+## Phase 0 -- DONE
 - Drop all the nonsense from default template
 - Add API endpoint stubs and associated data structures
 
