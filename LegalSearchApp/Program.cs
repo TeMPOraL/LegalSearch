@@ -67,7 +67,7 @@ app.MapGet("/search", Results<BadRequest<string>, Ok<SearchResponse>> ([AsParame
                 Confidence: 1.0f
             )).ToArray()
     ));
-});
+}).WithSummary("Search for legal documents by a query string.").WithDescription("Currently only supports FullText search strategy.");
 
 app.MapGet("/document/{id}", Results<NotFound<string>, FileContentHttpResult> (string id) =>
 {
@@ -77,12 +77,18 @@ app.MapGet("/document/{id}", Results<NotFound<string>, FileContentHttpResult> (s
         return TypedResults.NotFound("No document with such ID found.");
     }
     return TypedResults.File(Encoding.UTF8.GetBytes(document.Content), "text/plain", $"document-{id}.txt");
-});
+}).WithSummary("Download the full legal document by its ID.");
 
 app.MapPost("/upload", () =>
 {
     return TypedResults.InternalServerError("Not implemented yet.");
-});
+}).WithSummary("Upload a new legal document.").WithDescription("Document will be subject to processing to enable search. This endpoint is not implemented yet.");
+
+app.MapGet("/githublicenses", async () =>
+{
+    var licenses = await LegalDataLoader.LoadGithubLicenses();
+    return TypedResults.Ok(licenses);
+}).WithSummary("DEBUG -- Fetch popular licenses from GitHub API.");
 #endregion
 
 app.Run();

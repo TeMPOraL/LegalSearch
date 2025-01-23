@@ -17,7 +17,7 @@ Additional goals here include:
 - Set up basic GitHub actions to build/test it if it makes sense
 
 ## Phase 1
-- Eat up GitHub licenses and keep them in memory
+- Eat up GitHub licenses and keep them in memory -- Sort of done
 - Implement API for regular text search -- DONE
 
 ## Phase 2
@@ -26,6 +26,9 @@ Additional goals here include:
 ## Phase 3
 - Build the embedding pipeline
 - Use some vector database on e.g. Azure
+
+## Phase 4
+- Automatically generate tool descriptions for OpenAI, Anthropic
 
 # API design
 We'll need a simple search endpoint, say:
